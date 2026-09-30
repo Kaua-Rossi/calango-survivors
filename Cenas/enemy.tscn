@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d03wjl7bl7brp"]
+
+[ext_resource type="Script" uid="uid://ca32xkbkmgga1" path="res://Cenas/enemy.gd" id="1_1ejt6"]
+[ext_resource type="Texture2D" uid="uid://byxbeofojlev5" path="res://Assets/calango.png" id="1_pooe4"]
+[ext_resource type="PackedScene" uid="uid://u3ky3y55vpjl" path="res://Cenas/cuscuz.tscn" id="2_qmbps"]
+[ext_resource type="Texture2D" uid="uid://grtskp4g4v3q" path="res://Assets/olhos.png" id="3_rk41v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o73j0"]
+size = Vector2(19, 14)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1ejt6"]
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o73j0"]
+light_mode = 1
+
+[node name="Enemy" type="CharacterBody2D" unique_id=647319042 groups=["Enemy"]]
+script = ExtResource("1_1ejt6")
+cuscuz_scene = ExtResource("2_qmbps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=997417446]
+position = Vector2(-1.5, -3)
+shape = SubResource("RectangleShape2D_o73j0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=405462447]
+material = SubResource("CanvasItemMaterial_1ejt6")
+texture = ExtResource("1_pooe4")
+
+[node name="Eyes" type="Sprite2D" parent="Sprite2D" unique_id=1950097861]
+material = SubResource("CanvasItemMaterial_o73j0")
+texture = ExtResource("3_rk41v")

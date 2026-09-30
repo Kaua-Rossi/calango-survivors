@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://jtiwqtfjghg1"]
+
+[ext_resource type="Texture2D" uid="uid://tqquebqud8qi" path="res://Assets/cowboy_death_spritesheet.png" id="1_ls5xv"]
+[ext_resource type="Script" uid="uid://c4rutru4wiw0e" path="res://Cenas/death_menu.gd" id="1_u0456"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iurus"]
+atlas = ExtResource("1_ls5xv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5xc8"]
+atlas = ExtResource("1_ls5xv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er3lm"]
+atlas = ExtResource("1_ls5xv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gtkf"]
+atlas = ExtResource("1_ls5xv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lreyb"]
+atlas = ExtResource("1_ls5xv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpn3l"]
+atlas = ExtResource("1_ls5xv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c66tc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iurus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5xc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er3lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gtkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lreyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpn3l")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DeathMenu" type="Control" unique_id=891469697]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u0456")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1579794280]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.16, 9.12)
+color = Color(0, 0, 0.05490196, 1)
+
+[node name="Label" type="Label" parent="." unique_id=601643991]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 27.0
+offset_right = 430.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 44
+text = "Virou comida de calango XD"
+
+[node name="Button" type="Button" parent="." unique_id=1105386004]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 219.0
+offset_right = 588.0
+offset_bottom = 250.0
+text = "Tentar novamente"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2144170582]
+position = Vector2(186, 217)
+scale = Vector2(8.361521, 8.280001)
+sprite_frames = SubResource("SpriteFrames_c66tc")
+autoplay = "default"
+frame_progress = 0.507119
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

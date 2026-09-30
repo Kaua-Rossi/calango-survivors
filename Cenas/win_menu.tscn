@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://b6fwjfm2tat5h"]
+
+[ext_resource type="Texture2D" uid="uid://ddoxc8v1xv00l" path="res://Assets/cowboy_walk_up_spritesheet.png" id="1_8agxe"]
+[ext_resource type="Script" uid="uid://coqwawqhnn1xp" path="res://Cenas/win_menu.gd" id="1_hip64"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hip64"]
+atlas = ExtResource("1_8agxe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax4fu"]
+atlas = ExtResource("1_8agxe")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_223f7"]
+atlas = ExtResource("1_8agxe")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdf2x"]
+atlas = ExtResource("1_8agxe")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o73j0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hip64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax4fu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_223f7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdf2x")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WinMenu" type="Control" unique_id=58827526]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hip64")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=967659663]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.16, 9.12)
+color = Color(0, 0, 0.05490196, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1621564867]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 31.0
+offset_right = 608.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 44
+text = "Você sobreviveu ao sertão!"
+
+[node name="Button" type="Button" parent="." unique_id=85221393]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 191.0
+offset_right = 391.0
+offset_bottom = 222.0
+text = "Voltar para o menu"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=771709701]
+position = Vector2(315, 286)
+scale = Vector2(4.5600014, 4.5600014)
+sprite_frames = SubResource("SpriteFrames_o73j0")
+autoplay = "default"
+frame_progress = 0.89523196
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

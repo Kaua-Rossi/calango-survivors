@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://u3ky3y55vpjl"]
+
+[ext_resource type="Texture2D" uid="uid://ksk1sumc5ywh" path="res://Assets/cuscuz.png" id="1_2gqkn"]
+[ext_resource type="Script" uid="uid://lv45luw1q6dd" path="res://Cenas/cuscuz.gd" id="1_fda4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o73j0"]
+size = Vector2(18, 16)
+
+[node name="Cuscuz" type="Area2D" unique_id=288914317]
+script = ExtResource("1_fda4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1456143604]
+shape = SubResource("RectangleShape2D_o73j0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=596614174]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_2gqkn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

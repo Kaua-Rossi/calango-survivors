@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://derbdmrm7y4ig"]
+
+[ext_resource type="Script" uid="uid://bocu4dftvjfgm" path="res://Cenas/shoot.gd" id="1_8px22"]
+[ext_resource type="Texture2D" uid="uid://dbmchla7le14e" path="res://Assets/bullet.png" id="1_v2dtu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o73j0"]
+size = Vector2(2, 2)
+
+[node name="Shoot" type="Area2D" unique_id=913862266]
+script = ExtResource("1_8px22")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=492142458]
+texture = ExtResource("1_v2dtu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1506099168]
+shape = SubResource("RectangleShape2D_o73j0")
+
+[node name="Timer" type="Timer" parent="." unique_id=944799446]
+wait_time = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
